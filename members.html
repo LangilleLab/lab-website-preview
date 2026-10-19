@@ -1,0 +1,45 @@
+---
+layout: default
+title: People
+description: Current members and alumni of the Langille Lab at Dalhousie University.
+---
+<div class="wrap">
+<header class="page-head">
+<div class="eyebrow">People</div>
+<h1>Our team</h1>
+<p class="lede">Scientists, staff and trainees working across microbiome research, bioinformatics and the Integrated Microbiome Resource.</p>
+</header>
+
+<section style="padding-bottom: 72px">
+<div class="people">
+{% for person in site.data.people.current %}<article class="person">
+{% if person.photo %}<img src="{{ '/images/' | append: person.photo | relative_url }}" alt="{{ person.name }}" loading="lazy">{% else %}<div class="initials" aria-hidden="true">{{ person.name | slice: 0 }}</div>{% endif %}
+<div>
+<div class="person-name">{{ person.name }}</div>
+<div class="person-role">{{ person.role }}</div>
+{% if person.unit %}<div class="person-unit">{{ person.unit }}</div>{% endif %}
+</div>
+{% if person.email %}<a href="mailto:{{ person.email }}">{{ person.email }}</a>{% endif %}
+</article>
+{% endfor %}</div>
+</section>
+</div>
+
+<section class="band section">
+<div class="wrap">
+<div class="section-head" style="margin-bottom: 28px">
+<div class="stack" style="gap: 8px">
+<h2>Alumni</h2>
+<p class="muted">Former lab members and the year they left. Former member? Let us know where you are now at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+</div>
+</div>
+<div class="alumni">
+{% for group in site.data.people.alumni_groups %}{% assign members = site.data.people.alumni | where: "group", group %}{% if members.size > 0 %}<div>
+<h3>{{ group }}</h3>
+<ul>
+{% for a in members %}<li><span>{{ a.name }} <span class="yr">{{ a.year }}</span></span>{% if a.note %}<span class="note">{{ a.note }}</span>{% endif %}{% if a.now %}<span class="now">Now: {{ a.now }}</span>{% endif %}</li>
+{% endfor %}</ul>
+</div>
+{% endif %}{% endfor %}</div>
+</div>
+</section>

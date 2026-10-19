@@ -1,0 +1,100 @@
+---
+layout: default
+---
+<div class="wrap">
+<section class="hero">
+<div class="hero-text">
+<div class="eyebrow">Microbiome · Bioinformatics · Human health</div>
+<h1>Better methods for microbiome science, applied to human health.</h1>
+<p class="lede">We develop and test bioinformatic methods to understand the role of the microbiome in disease, and we partner with clinical and basic scientists to put them to work.</p>
+<div class="btns">
+<a class="btn btn-primary" href="{{ '/research.html' | relative_url }}">Explore our research</a>
+<a class="btn btn-outline" href="{{ '/positions.html' | relative_url }}">Join the lab</a>
+</div>
+</div>
+<figure class="hero-figure">
+<div class="hero-photo"><img src="{{ '/images/lab_2026.jpg' | relative_url }}" alt="Members of the Langille Lab outdoors by the water" width="1600" height="900"></div>
+<figcaption class="caption">Microbiome Anchor Conference, Oak Island Resort, June 2026</figcaption>
+</figure>
+</section>
+</div>
+
+<section class="band section">
+<div class="wrap">
+<div class="section-head">
+<h2>What we do</h2>
+<a class="more" href="{{ '/research.html' | relative_url }}">Read more about our research →</a>
+</div>
+<div class="grid">
+<article class="card">
+<h3>Collaborative health projects</h3>
+<p>Bringing advanced bioinformatics to clinical studies to understand how humans and their microbes interact in health and disease.</p>
+<div class="tags"><span class="tag">Crohn disease</span><span class="tag">Lung cancer</span><span class="tag">Oral microbiome</span><span class="tag">Aging and frailty</span></div>
+</article>
+<article class="card">
+<h3>Methods and resources</h3>
+<p>Creating and validating bioinformatic approaches that get more reliable biological insight out of microbiome data.</p>
+<div class="tags"><span class="tag">Functional prediction</span><span class="tag">Low biomass samples</span><span class="tag">Reproducibility</span><span class="tag">Validation</span></div>
+</article>
+<article class="card">
+<h3>Integrated Microbiome Resource</h3>
+<p>A sequencing and bioinformatics service housed in the lab, supporting microbiome researchers around the world.</p>
+<a class="more" href="{{ site.imr }}">Visit imr.bio →</a>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<div class="section-head">
+<div class="stack" style="gap: 8px">
+<h2>Open software</h2>
+<p class="muted" style="max-width: 620px">Tools and workflows we build and maintain for the microbiome community. All are free and open source.</p>
+</div>
+<a class="more" href="{{ '/software.html' | relative_url }}">All software →</a>
+</div>
+<div class="grid">
+{% for tool in site.data.software %}{% if tool.home %}<a class="tool" href="{{ tool.link }}">
+<span class="tool-name">{{ tool.name }}</span>
+<span class="tool-desc">{{ tool.short }}</span>
+</a>
+{% endif %}{% endfor %}</div>
+</div>
+</section>
+
+<section class="band section">
+<div class="wrap pubs-layout">
+<div class="pubs-side">
+<h2 style="font-size: 38px">Selected publications</h2>
+<p class="muted">A few recent highlights from the lab.</p>
+<div class="stack" style="gap: 8px; font-weight: 600">
+<a class="more" href="{{ '/pubs.html' | relative_url }}">All publications →</a>
+<a class="more" href="{{ site.scholar }}">Google Scholar →</a>
+</div>
+</div>
+<div class="pubs-main">
+<ol class="pub-list">
+{% assign featured = site.data.publications | where: "featured", true %}{% for pub in featured limit: 4 %}{% include pub.html pub=pub %}{% endfor %}</ol>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap callouts">
+<div class="callout callout-soft">
+<h2>Join the lab</h2>
+<p>We welcome trainees from many backgrounds and disciplines. If you want to build skills in genomics and bioinformatics while working on real health questions, we would like to hear from you.</p>
+<div class="btns">
+<a class="btn btn-primary" href="{{ '/positions.html' | relative_url }}">See opportunities</a>
+<a class="btn btn-outline" href="{{ '/members.html' | relative_url }}">Meet the team</a>
+</div>
+</div>
+<div class="callout callout-imr">
+<div class="eyebrow">Sequencing service</div>
+<h2>Need microbiome sequencing?</h2>
+<p>The Integrated Microbiome Resource offers amplicon and metagenomic sequencing with bioinformatics support, for academic and industry researchers.</p>
+<div class="btns"><a class="btn btn-white" href="{{ site.imr }}">Visit imr.bio</a></div>
+</div>
+</div>
+</section>

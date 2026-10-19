@@ -1,0 +1,47 @@
+---
+layout: default
+title: Research
+description: The Langille Lab's three research pillars, from collaborative health studies to bioinformatic methods and the Integrated Microbiome Resource.
+---
+<div class="wrap">
+<header class="page-head">
+<div class="eyebrow">Research</div>
+<h1>Understanding the microbiome in health and disease</h1>
+<p class="lede">Our aim is to develop novel bioinformatic and computational methods to better understand the role of the microbiome in disease. The work rests on three connected pillars.</p>
+</header>
+</div>
+
+<section class="band section">
+<div class="wrap grid">
+<article class="card">
+<h3>Collaborative health projects</h3>
+<p>We work with clinicians and scientists to better understand human and microbial interactions in health and disease, bringing advanced bioinformatic methods to their studies.</p>
+<div class="tags"><span class="tag">Crohn disease</span><span class="tag">Lung cancer</span><span class="tag">Oral microbiome</span><span class="tag">Aging and frailty</span></div>
+</article>
+<article class="card">
+<h3>Application and resource development</h3>
+<p>We create and validate bioinformatic approaches that improve the biological insight we can draw from microbiome data, and release them as open software.</p>
+<div class="tags"><span class="tag">Functional prediction</span><span class="tag">Low biomass samples</span><span class="tag">Reproducibility</span><span class="tag">Validation</span></div>
+<a class="more" href="{{ '/software.html' | relative_url }}">See our software →</a>
+</article>
+<article class="card">
+<h3>Integrated Microbiome Resource</h3>
+<p>A sequencing and bioinformatics service housed within the lab. The IMR offers current sequencing technologies and deep expertise in microbiome sequencing and analysis to scientists around the world.</p>
+<a class="more" href="{{ site.imr }}">Visit imr.bio →</a>
+</article>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap pubs-layout">
+<div class="pubs-side">
+<h2 style="font-size: 32px">Recent work</h2>
+<p class="muted">Our newest papers across all three pillars.</p>
+<a class="more" href="{{ '/pubs.html' | relative_url }}">All publications →</a>
+</div>
+<div class="pubs-main">
+<ol class="pub-list">
+{% for pub in site.data.publications limit: 6 %}{% include pub.html pub=pub %}{% endfor %}</ol>
+</div>
+</div>
+</section>

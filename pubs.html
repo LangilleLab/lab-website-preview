@@ -1,0 +1,21 @@
+---
+layout: default
+title: Publications
+description: The complete list of publications from the Langille Lab.
+---
+<div class="wrap">
+<header class="page-head">
+<div class="eyebrow">Publications</div>
+<h1>Publications</h1>
+<p class="lede">All publications from the lab, newest first. You can also follow new work on <a href="{{ site.scholar }}">Google Scholar</a>.</p>
+</header>
+{% assign years = site.data.publications | group_by: "year" %}
+<nav class="year-nav" aria-label="Jump to year">
+{% for y in years %}<a href="#y{{ y.name }}">{{ y.name }}</a>
+{% endfor %}</nav>
+<div style="padding-bottom: 72px">
+{% for y in years %}<h2 class="year-head" id="y{{ y.name }}">{{ y.name }}</h2>
+<ol class="pub-list">
+{% for pub in y.items %}{% include pub.html pub=pub %}{% endfor %}</ol>
+{% endfor %}</div>
+</div>
